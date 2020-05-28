@@ -35,11 +35,12 @@ const AuditionTable = (props) => {
                             {audition.notes}
                         </td>
                         <td>
-                            <Link >Details</Link>
+                            <Link to='/detail'>Details</Link>
                         </td>
                     </tr>
                 )}
             </table>
+            <Link to='/new'>NEW AUDITION</Link>
         </div>
     )
 }

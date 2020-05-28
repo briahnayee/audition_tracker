@@ -2,6 +2,8 @@ import React from 'react';
 import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 import './App.css';
 import Auditions from './Auditions';
+import AuditionDetail from './AuditionDetail/AuditionDetail';
+import NewAudition from './NewAudition/NewAudition';
 
 function App() {
   return (
@@ -12,6 +14,12 @@ function App() {
         </Route>
         <Route path='/auditions'>
             <Auditions />
+        </Route>
+        <Route path='/detail'>
+            <AuditionDetail />
+        </Route>
+        <Route path='/new'>
+            <NewAudition />          
         </Route>
       </Switch>
     </Router>
