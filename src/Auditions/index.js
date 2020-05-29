@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Auditions.css';
 import AuditionTable from '../AuditionTable/AuditionTable.js';
 import Statistics from '../Statistics/Statistics.js'
@@ -24,12 +24,23 @@ const data = [
 ]
 
 const Auditions = () => {
-    return(
-    <>
-    <h1>Bree's Auditions</h1>
-        <Statistics />
-        <AuditionTable auditions={data} />
-    </>
+
+    const [auditions, setAuditions] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:3001/auditions", { method: "GET" })
+        .then(response => response.json())
+        .then(data => {
+            setAuditions(data)
+        })
+    }, [])
+
+    return (
+        <>
+            <h1>Bree's Auditions</h1>
+            <Statistics />
+            <AuditionTable auditions={auditions} />
+        </>
     )
 }
 

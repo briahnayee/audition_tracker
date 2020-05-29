@@ -1,10 +1,44 @@
-import React from 'react';
-import './AuditionDetail.css';
+// import React from 'react';
+// import './AuditionDetail.css';
 
-const AuditionDetail = () => {
-    return(
-        <h1>Audition Detail</h1>
-    )
-}
+// const AuditionDetail = () => {
+//     return(
+//         <>
+//         <table>
+//                 <tr>
+//                     <th>Project</th>
+//                     <th>Role</th>
+//                     <th>Date</th>
+//                     <th>Casting Director</th>
+//                     <th>Notes</th>
+//                 </tr>
+//                 {props.auditions.map(audition =>
+//                     <tr
+//                         className='auditions'
+//                         key={audition.id}
+//                     >
+//                         <td>
+//                             {audition.project}
+//                         </td>
+//                         <td>
+//                             {audition.role}
+//                         </td>
+//                         <td>
+//                             {audition.date}
+//                         </td>
+//                         <td>
+//                             {audition.castingDirector}
+//                         </td>
+//                         <td>
+//                             {audition.notes}
+//                         </td>
+//                         <td>
+//                             <Link to='/deleteAudition'>Delete</Link>
+//                         </td>
+//                     </tr>
+//                 )}
+//             </table>
+//     )
+// }
 
-export default AuditionDetail;
+// export default AuditionDetail;
