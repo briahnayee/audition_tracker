@@ -4,6 +4,8 @@ import './App.css';
 import Auditions from './Auditions';
 import AuditionDetail from './AuditionDetail/AuditionDetail';
 import NewAudition from './NewAudition/NewAudition';
+import DeleteAudition from './DeleteAudition/DeleteAudition';
+import UpdateAudition from './UpdateAudition/UpdateAudition';
 
 function App() {
   return (
@@ -20,6 +22,12 @@ function App() {
         </Route>
         <Route path='/new'>
             <NewAudition />          
+        </Route>
+        <Route path='/deleteaudition'>
+            <DeleteAudition />
+        </Route>
+        <Route path='/updateaudition'>
+          <UpdateAudition />
         </Route>
       </Switch>
     </Router>

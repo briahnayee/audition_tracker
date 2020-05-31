@@ -1,0 +1,14 @@
+div {
+    font-family: 'Crimson Text', serif;
+
+}
+
+h4 {
+    font-family: 'Special Elite', cursive;
+
+}
+
+.column {
+    float: left;
+    width: 50%;
+}

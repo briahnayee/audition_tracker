@@ -1,0 +1,20 @@
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navEl {
+    text-decoration: none;
+    font-family: 'Special Elite', cursive;
+    color: black;
+}
+
+.navEl:hover {
+    color: gray;
+}

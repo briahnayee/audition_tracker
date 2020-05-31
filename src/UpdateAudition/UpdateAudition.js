@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import './UpdateAudition.css';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './NewAudition.css'
 
-const NewAudition = () => {
+
+const UpdateAudition = () => {
+
     let history = useHistory();
     const [project, setProject] = useState('')
     const [role, setRole] = useState('')
@@ -16,7 +18,7 @@ const NewAudition = () => {
     const [callback, setCallback] = useState('')
     const [notes, setNotes] = useState('')
 
-    const addNew = () => {
+    const update = () => {
         const headers = new Headers()
         headers.append('Content-Type', 'application/json')
         const auditionInfo = {
@@ -32,9 +34,9 @@ const NewAudition = () => {
             callback: callback,
             notes: notes
         }
-        fetch("http://localhost:3001/auditions", { 
+        fetch("http://localhost:3001/auditions/0", { 
             headers: headers,
-            method: "POST",
+            method: "PUT",
             body: JSON.stringify(auditionInfo)
         })
         .then(response => response.json())
@@ -43,37 +45,56 @@ const NewAudition = () => {
         })
     }
 
+    useEffect(() => {
+        fetch("http://localhost:3001/auditions/0", { method: "GET" })
+        .then(response => response.json())
+        .then(data => {
+            setProject(data.project)
+            setRole(data.role)
+            setDate(data.date)
+            setCastingDirector(data.castingDirector)
+            setCoaching(data.coaching)
+            setProductionCompany(data.productionCompany)
+            setMedium(data.medium)
+            setSource(data.source)
+            setMethod(data.method)
+            setCallback(data.callback)
+            setNotes(data.notes)
+        })
+    }, [])
+
     return (
-        <section>
-            <h1>New Audition</h1>
+        <div>
+ <section>
+            <h1>Edit Audition</h1>
             <form>
                 <label>
                     <span>Project:  </span>
-                    <input name='project' onChange={e => {
+                    <input name='project' value={project} onChange={e => {
                         setProject(e.target.value)
-                    }} required pattern='.{2,}' />
+                    }} required />
                 </label>
                 <label>
                     <span>Role:  </span>
-                    <input name='role' onChange={e => {
+                    <input name='role' value={role} onChange={e => {
                         setRole(e.target.value)
                     }} required pattern='.{2,}' />
                 </label>
                 <label>
                     <span>Date:  </span>
-                    <input name='date' onChange={e => {
+                    <input name='date' value={date} onChange={e => {
                         setDate(e.target.value)
                     }} required pattern='.{2,}' />
                 </label>
                 <label>
                     <span>Casting Director:  </span>
-                    <input name='castingDirector' onChange={e => {
+                    <input name='castingDirector' value={castingDirector} onChange={e => {
                         setCastingDirector(e.target.value)
                     }} required pattern='.{2,}' />
                 </label>
                 <label>
                     <span>Coaching:  </span>
-                    <select name='coaching' onChange={e => {
+                    <select name='coaching' value={coaching} onChange={e => {
                         setCoaching(e.target.value)
                     }}>
                         <option value='true'>Yes</option>
@@ -82,13 +103,13 @@ const NewAudition = () => {
                 </label>
                 <label>
                     <span>Production Company:  </span>
-                    <input name='productionCompany' onChange={e => {
+                    <input name='productionCompany' value={productionCompany} onChange={e => {
                         setProductionCompany(e.target.value)
                     }}/>
                 </label>
                 <label>
                     <span>Medium:  </span>
-                    <select name='medium' onChange={e => {
+                    <select name='medium' value={medium} onChange={e => {
                         setMedium(e.target.value)
                     }}>
                         <option value='short film'>short film</option>
@@ -104,13 +125,13 @@ const NewAudition = () => {
                 </label>
                 <label>
                     <span>How you got it:  </span>
-                    <input name='source' onChange={e => {
+                    <input name='source' value={source} onChange={e => {
                         setSource(e.target.value)
                     }} />
                 </label>
                 <label>
                     <span>Method:  </span>
-                    <select name='method' onChange={e => {
+                    <select name='method' value={method} onChange={e => {
                         setMethod(e.target.value)
                     }}>
                         <option value='in-person'>in-person</option>
@@ -120,7 +141,7 @@ const NewAudition = () => {
                 </label>
                 <label>
                     <span>Callback:  </span>
-                    <select name='callback' onChange={e => {
+                    <select name='callback' value={callback} onChange={e => {
                         setCallback(e.target.value)
                     }}>
                         <option value='true'>yes</option>
@@ -129,16 +150,17 @@ const NewAudition = () => {
                 </label>
                 <label>
                     <span>Notes:  </span>
-                    <input name='notes' onChange={e => {
+                    <input name='notes' value={notes} onChange={e => {
                         setNotes(e.target.value)
                     }}/>
                 </label>
             </form>
             <div className="submit">
-            <button onClick={addNew}>Submit</button>
+            <button onClick={update}>Submit</button>
             </div>
         </section>
+        </div>
     )
 }
 
-export default NewAudition
+export default UpdateAudition
