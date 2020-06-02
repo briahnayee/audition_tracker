@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import './CreateAccount.css';
 
 const CreateAccount = () => {
@@ -29,7 +29,7 @@ const CreateAccount = () => {
     }
 
     return (
-        <section>
+        <section className='createAccount'>
             <h1>New Account</h1>
             <form>
                 <label>
@@ -46,12 +46,15 @@ const CreateAccount = () => {
                 </label>
                 <label>
                     <span>Password: </span>
-                    <input name='password' onChange={e => {
+                    <input name='password' type='password' onChange={e => {
                         setPassword(e.target.value)
                     }} required pattern='.{3,}' />
                 </label>
             </form>
-            <button onClick={createAccount}>Create Account</button>
+            <div>
+            <button className="newAccount" onClick={createAccount}>Create Account</button>
+            <Link to='/' className='newAccount'>Back</Link>
+            </div>
         </section>
     )
 }

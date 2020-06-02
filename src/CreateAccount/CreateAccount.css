@@ -1,0 +1,12 @@
+.newAccount {
+    height: 80px;
+    margin: 10px;
+    width: 
+}
+
+.createAccount {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

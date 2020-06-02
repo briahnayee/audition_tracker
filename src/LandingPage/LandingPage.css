@@ -21,7 +21,7 @@
 }
 
 .landingButton:hover {
-    background: gray;
+    background: black;
     color: white;
 }
 
@@ -30,4 +30,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.watermarked {
+    background-image: url(https://thumbs.dreamstime.com/b/vintage-old-movie-camera-vintage-old-movie-camera-indoor-copy-space-176347056.jpg);
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right:0;
+    left: 0;
+    bottom:0;
+    z-index: -1;
 }

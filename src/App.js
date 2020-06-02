@@ -15,6 +15,7 @@ function App() {
   return (
     <>
       <Router>
+      <div className="watermarked" />
         <Switch>
           <Route path='/' exact>
             <LandingPage />
