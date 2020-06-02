@@ -5,7 +5,7 @@
 ![audition tracker](https://i.imgur.com/JnOJlkU.png)
 
 ### Technologies Used:
-React, Node, PostgreSQL, JavaScript, HTML, CSS
+React, Node.js, PostgreSQL, JavaScript, HTML, CSS
 
 ### Getting Started:
 Create an account and login. Create a new audition to add to your table by clicking the "New Audition" button. Fill in the form and click submit to add the audition to your table. 
