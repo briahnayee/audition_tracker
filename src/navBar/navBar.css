@@ -13,8 +13,26 @@
     text-decoration: none;
     font-family: 'Special Elite', cursive;
     color: black;
+    padding: 30px;
 }
 
 .navEl:hover {
     color: gray;
+}
+
+.logout {
+    text-decoration: none;
+    background-color: white;
+    border: none;
+    font-family: 'Special Elite', cursive;
+    color: black;
+    font-size: medium;
+}
+
+.logout:hover {
+    color: gray;
+}
+
+nav {
+
 }

@@ -19,6 +19,7 @@ const NewAudition = () => {
     const addNew = () => {
         const headers = new Headers()
         headers.append('Content-Type', 'application/json')
+        headers.append('authtoken', localStorage.getItem('authtoken'))
         const auditionInfo = {
             project: project,
             role: role,

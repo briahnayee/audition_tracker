@@ -9,7 +9,9 @@ const Auditions = () => {
     const [auditions, setAuditions] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3001/auditions", { method: "GET" })
+        const headers = new Headers()
+        headers.append('authtoken', localStorage.getItem('authtoken'))
+        fetch("http://localhost:3001/auditions", { headers:headers, method: "GET" })
         .then(response => response.json())
         .then(data => {
             setAuditions(data)

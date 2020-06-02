@@ -1,36 +1,53 @@
 import React from 'react';
-import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import Auditions from './Auditions';
 import AuditionDetail from './AuditionDetail/AuditionDetail';
 import NewAudition from './NewAudition/NewAudition';
 import DeleteAudition from './DeleteAudition/DeleteAudition';
 import UpdateAudition from './UpdateAudition/UpdateAudition';
+import CreateAccount from './CreateAccount/CreateAccount';
+import LogIn from './LogIn/LogIn';
+import LandingPage from './LandingPage/LandingPage';
 
 function App() {
+  const loggedIn = localStorage.getItem('authtoken')
   return (
-    <Router>
-      <Switch>
-        <Route path='/' exact>
-          <h1>Hello world!</h1>
-        </Route>
-        <Route path='/auditions'>
-            <Auditions />
-        </Route>
-        <Route path='/detail'>
-            <AuditionDetail />
-        </Route>
-        <Route path='/new'>
-            <NewAudition />          
-        </Route>
-        <Route path='/deleteaudition'>
-            <DeleteAudition />
-        </Route>
-        <Route path='/updateaudition'>
-          <UpdateAudition />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <Switch>
+          <Route path='/' exact>
+            <LandingPage />
+          </Route>
+          <Route path='/auditions'>
+            {loggedIn && <Auditions />}
+            {!loggedIn && <LogIn />}
+          </Route>
+          <Route path='/detail/:id'>
+            {loggedIn && <AuditionDetail />}
+            {!loggedIn && <LogIn />}
+          </Route>
+          <Route path='/new'>
+            {loggedIn && <NewAudition />}
+            {!loggedIn && <LogIn />}
+          </Route>
+          <Route path='/deleteaudition/:id'>
+            {loggedIn && <DeleteAudition />}
+            {!loggedIn && <LogIn />}
+          </Route>
+          <Route path='/updateaudition/:id'>
+            {loggedIn && <UpdateAudition />}
+            {!loggedIn && <LogIn />}
+          </Route>
+          <Route path='/createaccount'>
+            <CreateAccount />
+          </Route>
+          <Route path='/login'>
+            <LogIn />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 

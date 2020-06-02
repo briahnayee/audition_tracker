@@ -1,13 +1,16 @@
 import React from 'react';
 import './DeleteAudition.css';
-import { useHistory } from 'react-router-dom';
+import { useHistory, withRouter } from 'react-router-dom';
 
-const DeleteAudition = () => {
+const DeleteAudition = (props) => {
     let history = useHistory();
 
 
     const DeleteOne = () => {
-        fetch("http://localhost:3001/auditions/0", { 
+        const headers = new Headers()
+        headers.append('authtoken', localStorage.getItem('authtoken'))
+        fetch(`http://localhost:3001/auditions/${props.match.params.id}`, { 
+            headers: headers,
             method: "DELETE",
         })
         .then(response => response.json())
@@ -24,4 +27,4 @@ const DeleteAudition = () => {
     )
 }
 
-export default DeleteAudition
+export default withRouter(DeleteAudition)

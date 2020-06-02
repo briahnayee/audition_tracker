@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import './AuditionDetail.css';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 
-const AuditionDetail = () => {
+const AuditionDetail = (props) => {
 
     const [audition, setAudition] = useState({})
 
     useEffect(() => {
-        fetch("http://localhost:3001/auditions/0", { method: "GET" })
+        const headers = new Headers()
+        headers.append('authtoken', localStorage.getItem('authtoken'))
+        fetch(`http://localhost:3001/auditions/${props.match.params.id}`, { headers: headers, method: "GET" })
             .then(response => response.json())
             .then(data => {
+                console.log(data)
                 setAudition(data)
             })
     }, [])
+
+    console.log(props)
 
     return (
         <>
@@ -67,9 +72,9 @@ const AuditionDetail = () => {
                 {audition.notes}
             </div>
             <Link to='/auditions' className="button">Back</Link>
-            <Link to='/updateaudition' className="button">Edit</Link>
+            <Link to={`/updateaudition/${audition.id}`} className="button">Edit</Link>
         </>
     )
 }
 
-export default AuditionDetail;
+export default withRouter(AuditionDetail);

@@ -35,8 +35,8 @@ const AuditionTable = (props) => {
                             {audition.notes}
                         </td>
                         <td>
-                            <Link to='/detail' className="button">Details</Link>
-                            <Link to='/deleteaudition' className="button">Delete</Link>
+                            <Link to={`/detail/${audition.id}`} className="button">Details</Link>
+                            <Link to={`/deleteaudition/${audition.id}`} className="button">Delete</Link>
                         </td>
                     </tr>
                 )}

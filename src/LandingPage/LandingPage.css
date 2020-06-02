@@ -1,0 +1,33 @@
+.subtitle {
+    display: flex;
+    justify-content: center;
+}
+
+.landingButton {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+    border: solid black;
+    padding: 30px;
+    margin: 30px;
+    width: 500px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border-radius: 10px;
+    font-family: 'Special Elite', cursive;
+}
+
+.landingButton:hover {
+    background: gray;
+    color: white;
+}
+
+
+.LandingPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

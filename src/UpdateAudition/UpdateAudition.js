@@ -1,9 +1,9 @@
 import './UpdateAudition.css';
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, withRouter } from 'react-router-dom';
 
 
-const UpdateAudition = () => {
+const UpdateAudition = (props) => {
 
     let history = useHistory();
     const [project, setProject] = useState('')
@@ -21,6 +21,7 @@ const UpdateAudition = () => {
     const update = () => {
         const headers = new Headers()
         headers.append('Content-Type', 'application/json')
+        headers.append('authtoken', localStorage.getItem('authtoken'))
         const auditionInfo = {
             project: project,
             role: role,
@@ -34,7 +35,7 @@ const UpdateAudition = () => {
             callback: callback,
             notes: notes
         }
-        fetch("http://localhost:3001/auditions/0", { 
+        fetch(`http://localhost:3001/auditions/${props.match.params.id}`, { 
             headers: headers,
             method: "PUT",
             body: JSON.stringify(auditionInfo)
@@ -46,7 +47,9 @@ const UpdateAudition = () => {
     }
 
     useEffect(() => {
-        fetch("http://localhost:3001/auditions/0", { method: "GET" })
+        const headers = new Headers()
+        headers.append('authtoken', localStorage.getItem('authtoken'))
+        fetch(`http://localhost:3001/auditions/${props.match.params.id}`, { headers: headers, method: "GET" })
         .then(response => response.json())
         .then(data => {
             setProject(data.project)
@@ -163,4 +166,4 @@ const UpdateAudition = () => {
     )
 }
 
-export default UpdateAudition
+export default withRouter(UpdateAudition)
