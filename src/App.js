@@ -15,9 +15,10 @@ function App() {
   return (
     <>
       <Router>
-      <div className="watermarked" />
+
         <Switch>
           <Route path='/' exact>
+            <div className="watermarked" />
             <LandingPage />
           </Route>
           <Route path='/auditions'>
@@ -41,9 +42,11 @@ function App() {
             {!loggedIn && <LogIn />}
           </Route>
           <Route path='/createaccount'>
+            <div className="watermarked" />
             <CreateAccount />
           </Route>
           <Route path='/login'>
+            <div className="watermarked" />
             <LogIn />
           </Route>
         </Switch>

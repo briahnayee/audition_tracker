@@ -30,30 +30,34 @@ const CreateAccount = () => {
 
     return (
         <section className='createAccount'>
-            <h1>New Account</h1>
-            <form>
-                <label>
-                    <span>Name: </span>
-                    <input name='name' onChange={e => {
-                        setName(e.target.value)
-                    }} required pattern='.{2,}' />
-                </label>
-                <label>
-                    <span>Email: </span>
-                    <input name='email' onChange={e => {
-                        setEmail(e.target.value)
-                    }} required pattern='.{2,}' />
-                </label>
-                <label>
-                    <span>Password: </span>
-                    <input name='password' type='password' onChange={e => {
-                        setPassword(e.target.value)
-                    }} required pattern='.{3,}' />
-                </label>
-            </form>
-            <div>
-            <button className="newAccount" onClick={createAccount}>Create Account</button>
-            <Link to='/' className='newAccount'>Back</Link>
+            <div className="purpleRectangle">
+                <h1 className="header">New Account</h1>
+                <div className='space'></div>
+                <form className='form'>
+                    <div className='singleInput'>
+                        <label className="label">Name: </label>
+                        <input className='smallText' name='name' onChange={e => {
+                            setName(e.target.value)
+                        }} required pattern='.{2,}' />
+                    </div>
+                    <div className='singleInput'>
+                        <label className="label">Email: </label>
+                        <input className='smallText' name='email' onChange={e => {
+                            setEmail(e.target.value)
+                        }} required pattern='.{2,}' />
+                    </div>
+                    <div className='singleInput'>
+                        <label className="label">Password: </label>
+                        <input className='smallText' name='password' type='password' onChange={e => {
+                            setPassword(e.target.value)
+                        }} required pattern='.{3,}' />
+                    </div>
+                </form>
+                <div className='space'></div>
+                <div>
+                    <button className="bigButton" onClick={createAccount}>Submit</button>
+                    <Link to='/' className='bigButton'>Back</Link>
+                </div>
             </div>
         </section>
     )

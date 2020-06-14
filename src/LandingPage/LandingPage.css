@@ -1,46 +1,13 @@
-.subtitle {
-    display: flex;
-    justify-content: center;
+#subheading {
+display: flex;
+justify-content: center;
+width: 382px;
+height: 78px;
+text-align: center;
 }
-
-.landingButton {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    font-size: larger;
-    border: solid black;
-    padding: 30px;
-    margin: 30px;
-    width: 500px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    border-radius: 10px;
-    font-family: 'Special Elite', cursive;
-}
-
-.landingButton:hover {
-    background: black;
-    color: white;
-}
-
 
 .LandingPage {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.watermarked {
-    background-image: url(https://thumbs.dreamstime.com/b/vintage-old-movie-camera-vintage-old-movie-camera-indoor-copy-space-176347056.jpg);
-    opacity: 0.5;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    right:0;
-    left: 0;
-    bottom:0;
-    z-index: -1;
 }

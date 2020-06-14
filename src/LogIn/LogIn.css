@@ -1,0 +1,9 @@
+.loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login__label {
+    width: 30%;
+}

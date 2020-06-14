@@ -1,38 +1,29 @@
 .logo {
     display: flex;
     justify-content: center;
+    margin-right: 30px;;
 }
 
-.navBar {
+.navLinks {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: start;
+    width: 100%;
 }
 
 .navEl {
     text-decoration: none;
-    font-family: 'Special Elite', cursive;
-    color: black;
     padding: 30px;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
 }
 
 .navEl:hover {
     color: gray;
 }
 
-.logout {
-    text-decoration: none;
-    background-color: white;
-    border: none;
-    font-family: 'Special Elite', cursive;
-    color: black;
-    font-size: medium;
-}
 
-.logout:hover {
-    color: gray;
-}
-
-nav {
-
+.navAndLogo {
+    display: flex;
+    justify-content: space-between;
 }

@@ -6,18 +6,18 @@ const NavBar = () => {
     let history = useHistory();
     return (
         <div className="navBar">
-            <div>
-                <img src="https://i.imgur.com/vo5pbow.png" alt="logo" width="150px" className="logo"></img>
-            </div>
-            <div>
-            <nav>
-                <a href="/auditions" className="navEl">My Auditions </a>
-                <a href="/new" className="navEl">Add New Audition</a>
-                <button className="logout" onClick={ () => {
-                    localStorage.removeItem("authtoken")
-                    history.push('/login') 
-                }}>Logout</button>
-            </nav>
+            <div className="navAndLogo">
+                <nav className='navLinks'>
+                    <a href="/auditions" className="navEl label">My Auditions </a>
+                    <a href="/new" className="navEl label">New Audition</a>
+                    <div className="navEl label" onClick={() => {
+                        localStorage.removeItem("authtoken")
+                        history.push('/login')
+                    }}>Logout</div>
+                </nav>
+                <div>
+                    <img src="https://i.imgur.com/vo5pbow.png" alt="logo" width="150px" className="logo"></img>
+                </div>
             </div>
         </div>
     )

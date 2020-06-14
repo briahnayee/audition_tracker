@@ -36,3 +36,131 @@
     transform: rotate(360deg);
   }
 }
+
+.watermarked {
+  background-image: url(https://i.imgur.com/Ndh3izI.jpg);
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right:0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.purpleRectangle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 595px;
+  height: 100vh;
+  left: 422px;
+  top: -67px;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+  background: rgba(121, 119, 172, 0.17);
+}
+
+.bigButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 267px;
+  height: 79px;  
+  background: #FEF8E7;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: Special Elite;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.bigButton:hover {
+  background: #7977AC;
+  color: #FEF8E7;
+}
+
+.subtitle {
+  font-family: Special Elite;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+
+.header {
+  font-family: Special Elite;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  color: black;
+}
+
+.label {
+  font-family: Special Elite;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  display: inline;
+
+
+}
+
+input {
+  width: 290px;
+  height: 39px;
+  background: #FEF8E7;
+  border: none;
+}
+
+.smallText {
+  font-family: Crimson Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  color: black;
+}
+
+.space {
+  height: 75px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.singleInput {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.label {
+  text-decoration: none;
+  color: black;
+  font-family: Special Elite;
+}
+
+.auditionRectangle {
+  position: absolute;
+  background-color: rgba(121, 119, 172, 0.17);
+  border-radius: 10px;
+  width: 1352px;
+  height: 712px;
+  left: 44px;
+  top: 133px;
+
+}
