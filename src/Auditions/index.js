@@ -11,7 +11,7 @@ const Auditions = () => {
     useEffect(() => {
         const headers = new Headers()
         headers.append('authtoken', localStorage.getItem('authtoken'))
-        fetch("http://localhost:3001/auditions", { headers: headers, method: "GET" })
+        fetch(process.env.REACT_APP_API_URL + "auditions", { headers: headers, method: "GET" })
             .then(response => response.json())
             .then(data => {
                 setAuditions(data)

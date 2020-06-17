@@ -14,7 +14,7 @@ const LogIn = () => {
             email: email,
             password: password
         }
-        fetch("http://localhost:3001/login", {
+        fetch(process.env.REACT_APP_API_URL + "login", {
             headers: headers,
             method: "POST",
             body: JSON.stringify(userInfo)

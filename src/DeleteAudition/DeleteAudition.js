@@ -9,7 +9,7 @@ const DeleteAudition = (props) => {
     const DeleteOne = () => {
         const headers = new Headers()
         headers.append('authtoken', localStorage.getItem('authtoken'))
-        fetch(`http://localhost:3001/auditions/${props.match.params.id}`, { 
+        fetch(process.env.REACT_APP_API_URL + `auditions/${props.match.params.id}`, { 
             headers: headers,
             method: "DELETE",
         })

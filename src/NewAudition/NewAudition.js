@@ -33,7 +33,7 @@ const NewAudition = () => {
             callback: callback,
             notes: notes
         }
-        fetch("http://localhost:3001/auditions", { 
+        fetch(process.env.REACT_APP_API_URL + "auditions", { 
             headers: headers,
             method: "POST",
             body: JSON.stringify(auditionInfo)

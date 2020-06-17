@@ -35,7 +35,7 @@ const UpdateAudition = (props) => {
             callback: callback,
             notes: notes
         }
-        fetch(`http://localhost:3001/auditions/${props.match.params.id}`, { 
+        fetch(process.env.REACT_APP_API_URL + `auditions/${props.match.params.id}`, { 
             headers: headers,
             method: "PUT",
             body: JSON.stringify(auditionInfo)
@@ -49,7 +49,7 @@ const UpdateAudition = (props) => {
     useEffect(() => {
         const headers = new Headers()
         headers.append('authtoken', localStorage.getItem('authtoken'))
-        fetch(`http://localhost:3001/auditions/${props.match.params.id}`, { headers: headers, method: "GET" })
+        fetch(process.env.REACT_APP_API_URL + `auditions/${props.match.params.id}`, { headers: headers, method: "GET" })
         .then(response => response.json())
         .then(data => {
             setProject(data.project)

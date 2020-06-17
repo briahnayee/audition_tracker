@@ -17,7 +17,7 @@ const CreateAccount = () => {
             password: password
         }
         console.log(userInfo)
-        fetch("http://localhost:3001/createaccount", {
+        fetch(process.env.REACT_APP_API_URL + "createaccount", {
             headers: headers,
             method: "POST",
             body: JSON.stringify(userInfo)
