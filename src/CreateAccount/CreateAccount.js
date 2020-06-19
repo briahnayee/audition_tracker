@@ -35,19 +35,19 @@ const CreateAccount = () => {
                 <div className='space'></div>
                 <form className='form'>
                     <div className='singleInput'>
-                        <label className="label">Name: </label>
+                        <label className="label Login__label">Name: </label>
                         <input className='smallText' name='name' onChange={e => {
                             setName(e.target.value)
                         }} required pattern='.{2,}' />
                     </div>
                     <div className='singleInput'>
-                        <label className="label">Email: </label>
+                        <label className="label Login__label">Email: </label>
                         <input className='smallText' name='email' onChange={e => {
                             setEmail(e.target.value)
                         }} required pattern='.{2,}' />
                     </div>
                     <div className='singleInput'>
-                        <label className="label">Password: </label>
+                        <label className="label Login__label">Password: </label>
                         <input className='smallText' name='password' type='password' onChange={e => {
                             setPassword(e.target.value)
                         }} required pattern='.{3,}' />

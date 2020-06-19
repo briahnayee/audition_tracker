@@ -3,9 +3,10 @@ import './AuditionTable.css';
 import {Link} from 'react-router-dom';
 
 const AuditionTable = (props) => {
+    console.log('props', props.auditions)
     return (
         <div>
-            <h3>Audition table</h3>
+            <h3 className='auditionTable'>Audition table</h3>
             <table>
                 <tr>
                     <th>Project</th>
@@ -35,13 +36,13 @@ const AuditionTable = (props) => {
                             {audition.notes}
                         </td>
                         <td>
-                            <Link to={`/detail/${audition.id}`} className="button">Details</Link>
-                            <Link to={`/deleteaudition/${audition.id}`} className="button">Delete</Link>
+                            <Link to={`/detail/${audition.id}`} className="smallButton">Details</Link>
+                            <Link to={`/deleteaudition/${audition.id}`} className="smallButton">X</Link>
                         </td>
                     </tr>
                 )}
             </table>
-            <Link to='/new'className="newButton">New Audition</Link>
+            <Link to='/new'className="smallButton">New Audition</Link>
         </div>
     )
 }

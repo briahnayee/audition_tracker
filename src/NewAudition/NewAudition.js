@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import './NewAudition.css'
+import { useHistory, Link } from 'react-router-dom';
+import './NewAudition.css';
+import NavBar from '../navBar/navBar.js';
 
 const NewAudition = () => {
     let history = useHistory();
@@ -45,50 +46,54 @@ const NewAudition = () => {
     }
 
     return (
+        <>
+        <NavBar />
         <section>
+            <div className='auditionRectangle'>
             <h1>New Audition</h1>
+
             <form>
-                <label>
-                    <span>Project:  </span>
+                <div className='label input'>
+                    <label>Project:  </label >
                     <input name='project' onChange={e => {
                         setProject(e.target.value)
                     }} required pattern='.{2,}' />
-                </label>
-                <label>
-                    <span>Role:  </span>
+                </div>
+                <div className='label input'>
+                    <label >Role:  </label >
                     <input name='role' onChange={e => {
                         setRole(e.target.value)
                     }} required pattern='.{2,}' />
-                </label>
-                <label>
-                    <span>Date:  </span>
+                </div>
+                <div className='label input'>
+                    <label >Date:  </label >
                     <input name='date' onChange={e => {
                         setDate(e.target.value)
                     }} required pattern='.{2,}' />
-                </label>
-                <label>
-                    <span>Casting Director:  </span>
+                </div>
+                <div className='label input'>
+                    <label >Casting Director:  </label >
                     <input name='castingDirector' onChange={e => {
                         setCastingDirector(e.target.value)
                     }} required pattern='.{2,}' />
-                </label>
-                <label>
-                    <span>Coaching:  </span>
+                </div>
+                <div className='label input'>
+                    <label >Coaching:  </label >
                     <select name='coaching' onChange={e => {
                         setCoaching(e.target.value)
                     }}>
                         <option value='true'>Yes</option>
                         <option value='false'>No</option>
                     </select>
-                </label>
-                <label>
-                    <span>Production Company:  </span>
+                </div>
+                <div className='label input'>
+                    <label >Production Company:  </label >
                     <input name='productionCompany' onChange={e => {
                         setProductionCompany(e.target.value)
                     }}/>
-                </label>
-                <label>
-                    <span>Medium:  </span>
+                </div>
+                <div className='label input'>
+                    <label >Medium:  </label >
                     <select name='medium' onChange={e => {
                         setMedium(e.target.value)
                     }}>
@@ -102,15 +107,15 @@ const NewAudition = () => {
                         <option value='music video'>music video</option>
                         <option value='other'>other</option>
                     </select>
-                </label>
-                <label>
-                    <span>How you got it:  </span>
+                </div>
+                <div className='label input'>
+                    <label >How you got it:  </label >
                     <input name='source' onChange={e => {
                         setSource(e.target.value)
                     }} />
-                </label>
-                <label>
-                    <span>Method:  </span>
+                </div>
+                <div className='label input'>
+                    <label >Method:  </label >
                     <select name='method' onChange={e => {
                         setMethod(e.target.value)
                     }}>
@@ -118,27 +123,30 @@ const NewAudition = () => {
                         <option value='self-tape'>self-tape</option>
                         <option value='other'>other</option>
                     </select>
-                </label>
-                <label>
-                    <span>Callback:  </span>
+                </div>
+                <div className='label input'>
+                    <label >Callback:  </label >
                     <select name='callback' onChange={e => {
                         setCallback(e.target.value)
                     }}>
                         <option value='true'>yes</option>
                         <option value='false'>no</option>
                     </select>
-                </label>
-                <label>
-                    <span>Notes:  </span>
+                </div>
+                <div className='label input'>
+                    <label >Notes:  </label >
                     <input name='notes' onChange={e => {
                         setNotes(e.target.value)
                     }}/>
-                </label>
+                </div>
             </form>
             <div className="submit">
-            <button onClick={addNew}>Submit</button>
+            <button className='smallButton' onClick={addNew}>Submit</button>
+            <button className='smallButton'><Link to='/auditions'>Back</Link></button>
+            </div>
             </div>
         </section>
+        </>
     )
 }
 

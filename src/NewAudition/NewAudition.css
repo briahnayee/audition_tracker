@@ -12,3 +12,8 @@ button {
     font-size: large;
     font-family: 'Crimson Text', serif;
 }
+
+.input {
+    margin: 10px;
+    text-align: center;
+}

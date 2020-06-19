@@ -112,7 +112,6 @@
   font-weight: normal;
   font-size: 24px;
   line-height: 24px;
-  display: inline;
 
 
 }
@@ -131,6 +130,7 @@ input {
   font-size: 24px;
   line-height: 33px;
   color: black;
+  text-decoration: none;
 }
 
 .space {
@@ -163,4 +163,32 @@ input {
   left: 44px;
   top: 133px;
 
+}
+
+.smallButton {
+  background: #FEF8E7;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: Special Elite;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  padding: 5px;
+  margin: 5px;
+}
+
+.smallButton:hover {
+  background: #7977AC;
+  color: #FEF8E7;
+}
+
+a {
+  text-decoration: none;
+  font-family: Special Elite;
+  color: black;
 }

@@ -12,3 +12,15 @@ h4 {
     float: left;
     width: 50%;
 }
+
+.detailItem {
+    padding-left: 10px;
+}
+
+.inline {
+    display: flex;
+}
+
+.notes {
+    padding-left: 10px;
+}

@@ -22,7 +22,7 @@ const Auditions = () => {
         <>
             <NavBar />
             <div className='auditionRectangle'>
-                <h1>Bree's Auditions</h1>
+                <h1>Your Auditions</h1>
                 <AuditionTable auditions={auditions} />
             </div>
         </>
