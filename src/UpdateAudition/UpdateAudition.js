@@ -164,7 +164,7 @@ const UpdateAudition = (props) => {
                         </form>
                         <div className="submit">
                             <button className="smallButton" onClick={update}>Submit</button>
-                            <button className="smallButton"><Link to='/auditions'>Back</Link></button>
+                            <Link to='/auditions'><button className='smallButton'>Back</button></Link>
                         </div>
                     </div>
                 </section>

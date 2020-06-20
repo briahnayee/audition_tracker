@@ -1,6 +1,8 @@
 import React from 'react';
 import './DeleteAudition.css';
-import { useHistory, withRouter } from 'react-router-dom';
+import { useHistory, withRouter, Link } from 'react-router-dom';
+import NavBar from '../navBar/navBar.js';
+
 
 const DeleteAudition = (props) => {
     let history = useHistory();
@@ -9,21 +11,25 @@ const DeleteAudition = (props) => {
     const DeleteOne = () => {
         const headers = new Headers()
         headers.append('authtoken', localStorage.getItem('authtoken'))
-        fetch(process.env.REACT_APP_API_URL + `auditions/${props.match.params.id}`, { 
+        fetch(process.env.REACT_APP_API_URL + `auditions/${props.match.params.id}`, {
             headers: headers,
             method: "DELETE",
         })
-        .then(response => response.json())
-        .then(data => {
-            history.push('/auditions') 
-        })
+            .then(response => response.json())
+            .then(data => {
+                history.push('/auditions')
+            })
     }
 
     return (
-        <div>
-        <h3>Are you sure you want to delete this audition?</h3>
-        <button onClick={DeleteOne}>Yes</button>
-        </div>
+        <>
+            <NavBar />
+            <div className='auditionRectangle'>
+                <h3>Are you sure you want to delete this audition?</h3>
+                <button className='smallButton' onClick={DeleteOne}>Yes</button>
+                <Link to='/auditions'><button className='smallButton'>Back</button></Link>
+            </div>
+        </>
     )
 }
 

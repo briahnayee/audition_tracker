@@ -50,7 +50,7 @@ const NewAudition = () => {
         <NavBar />
         <section>
             <div className='auditionRectangle'>
-            <h1>New Audition</h1>
+            <h1>New Audition</h1> 
 
             <form>
                 <div className='label input'>
@@ -142,7 +142,7 @@ const NewAudition = () => {
             </form>
             <div className="submit">
             <button className='smallButton' onClick={addNew}>Submit</button>
-            <button className='smallButton'><Link to='/auditions'>Back</Link></button>
+            <Link to='/auditions'><button className='smallButton'>Back</button></Link>
             </div>
             </div>
         </section>
